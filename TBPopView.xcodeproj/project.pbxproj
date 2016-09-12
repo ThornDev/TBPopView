@@ -14,6 +14,7 @@
 		305E32601D86B1E3000A39B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305E325F1D86B1E3000A39B8 /* Assets.xcassets */; };
 		305E32631D86B1E3000A39B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305E32611D86B1E3000A39B8 /* LaunchScreen.storyboard */; };
 		305E326E1D86B1E3000A39B8 /* TBPopViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E326D1D86B1E3000A39B8 /* TBPopViewTests.m */; };
+		305E327A1D86B1FB000A39B8 /* TBPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E32791D86B1FB000A39B8 /* TBPopoverView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		305E32691D86B1E3000A39B8 /* TBPopViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TBPopViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		305E326D1D86B1E3000A39B8 /* TBPopViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBPopViewTests.m; sourceTree = "<group>"; };
 		305E326F1D86B1E3000A39B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		305E32781D86B1FB000A39B8 /* TBPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBPopoverView.h; sourceTree = "<group>"; };
+		305E32791D86B1FB000A39B8 /* TBPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBPopoverView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				305E32571D86B1E3000A39B8 /* AppDelegate.m */,
 				305E32591D86B1E3000A39B8 /* ViewController.h */,
 				305E325A1D86B1E3000A39B8 /* ViewController.m */,
+				305E32781D86B1FB000A39B8 /* TBPopoverView.h */,
+				305E32791D86B1FB000A39B8 /* TBPopoverView.m */,
 				305E325C1D86B1E3000A39B8 /* Main.storyboard */,
 				305E325F1D86B1E3000A39B8 /* Assets.xcassets */,
 				305E32611D86B1E3000A39B8 /* LaunchScreen.storyboard */,
@@ -213,6 +218,7 @@
 			files = (
 				305E325B1D86B1E3000A39B8 /* ViewController.m in Sources */,
 				305E32581D86B1E3000A39B8 /* AppDelegate.m in Sources */,
+				305E327A1D86B1FB000A39B8 /* TBPopoverView.m in Sources */,
 				305E32551D86B1E3000A39B8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
