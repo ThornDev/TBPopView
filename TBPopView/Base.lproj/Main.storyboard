@@ -17,23 +17,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrH-mG-KxU">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrH-mG-KxU">
                                 <rect key="frame" x="479" y="0.0" width="121" height="57"/>
                                 <color key="backgroundColor" red="0.70196078429999997" green="0.6705882353" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="LKP-UR-2co"/>
                                     <constraint firstAttribute="width" constant="121" id="QwF-OY-9WB"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="showPopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z3Q-gE-ZGp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lii-O0-tpI">
+                                <rect key="frame" x="0.0" y="0.0" width="115" height="57"/>
+                                <color key="backgroundColor" red="0.70196078429999997" green="0.6705882353" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="DQS-X3-akE"/>
+                                    <constraint firstAttribute="width" constant="115" id="p9s-FI-Ppw"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ch-jc-hxp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al3-vj-3nJ">
+                                <rect key="frame" x="243" y="0.0" width="115" height="57"/>
+                                <color key="backgroundColor" red="0.70196078429999997" green="0.6705882353" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="TwV-TK-p21"/>
+                                    <constraint firstAttribute="height" constant="57" id="hKS-nR-lbd"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mLq-Px-Xys"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="rrH-mG-KxU" secondAttribute="trailing" id="4X4-bW-8LQ"/>
+                            <constraint firstItem="Lii-O0-tpI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AP8-D9-ngp"/>
                             <constraint firstItem="rrH-mG-KxU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CXR-RX-db8"/>
+                            <constraint firstItem="al3-vj-3nJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GYL-ZU-kFp"/>
+                            <constraint firstItem="Lii-O0-tpI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kfc-Mr-0X3"/>
+                            <constraint firstItem="al3-vj-3nJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LE7-qm-Sp6"/>
                         </constraints>
                     </view>
                 </viewController>
