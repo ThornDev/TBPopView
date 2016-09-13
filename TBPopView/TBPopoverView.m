@@ -56,7 +56,7 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-//    border color
+    //    border color
     [self.borderColor set];
     CGRect frame = CGRectMake(0, kArrowHeight, self.bounds.size.width,self.bounds.size.height - kArrowHeight );
     
@@ -72,7 +72,7 @@
             arrowPoint = CGPointMake(xMin+kArrowHeight+DEFAULT_SPACE_MARGIN, arrowPoint.y);
             break;
         case ArrowPositinInMiddle:
-//            arrowPoint = CGPointMake(xMin+kArrowHeight+DEFAULT_SPACE_MARGIN, arrowPoint.y);
+            //            arrowPoint = CGPointMake(xMin+kArrowHeight+DEFAULT_SPACE_MARGIN, arrowPoint.y);
             break;
         case ArrowPositionInRight:
             arrowPoint = CGPointMake(xMax-kArrowHeight-DEFAULT_SPACE_MARGIN, arrowPoint.y);
@@ -161,7 +161,7 @@
         
         frame.size.width = MAX(width, frame.size.width);
     }
-//    _popWidth = frame.size.width;
+    //    _popWidth = frame.size.width;
     frame.size.width = _popWidth;
     
     frame.origin.y = CGRectGetMaxY(self.viewFrame);
@@ -226,43 +226,29 @@
 /**
  *  show popView
  */
--(void)showWithAnimate:(BOOL)animate
+-(void)show
 {
     _handerView = [UIButton buttonWithType:UIButtonTypeCustom];
     [_handerView setFrame:[UIScreen mainScreen].bounds];
     [_handerView setBackgroundColor:[UIColor clearColor]];
-    [_handerView addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
+    [_handerView addTarget:self action:@selector(dismiss)
+          forControlEvents:UIControlEventTouchUpInside];
     [_handerView addSubview:self];
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
     
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:_handerView];
     
-    CGPoint arrowPoint = [self convertPoint:self.showPoint fromView:_handerView];
-    self.layer.anchorPoint = CGPointMake(arrowPoint.x / self.frame.size.width, arrowPoint.y / self.frame.size.height);
+    CGPoint covertPoint = CGPointMake(self.showPoint.x, CGRectGetMaxY(self.viewFrame));
+    CGPoint arrowPoint = [self convertPoint:covertPoint fromView:_handerView];
+    self.layer.anchorPoint = CGPointMake(arrowPoint.x / self.frame.size.width,
+                                         arrowPoint.y / self.frame.size.height);
     self.frame = [self fetchViewFrame];
     
-    self.alpha = 0.f;
-    self.transform = CGAffineTransformMakeScale(0.1f, 0.1f);
-    if (animate) {
-        [UIView animateWithDuration:0.2f
-                              delay:0.f
-                            options:UIViewAnimationOptionCurveEaseInOut
-                         animations:^{
-                             self.transform = CGAffineTransformMakeScale(1.05f, 1.05f);
-                             self.alpha = 1.f;
-                         } completion:^(BOOL finished) {
-                             [UIView animateWithDuration:0.08f
-                                                   delay:0.f
-                                                 options:UIViewAnimationOptionCurveEaseInOut
-                                              animations:^{
-                                                  self.transform = CGAffineTransformIdentity;
-                                              } completion:nil];
-                         }];
-    }else{
-        self.transform = CGAffineTransformMakeScale(1.05f, 1.05f);
-        self.alpha = 1.f;
-        self.transform = CGAffineTransformIdentity;
-    }
+
+    self.transform = CGAffineTransformMakeScale(1.05f, 1.05f);
+    self.alpha = 1.f;
+    self.transform = CGAffineTransformIdentity;
+    
     
 }
 /**
@@ -270,27 +256,7 @@
  */
 -(void)dismiss
 {
-    [self dismiss:NO];
-}
-/**
- *  dismiss popView with animate?
- *
- *  @param animate
- */
--(void)dismiss:(BOOL)animate
-{
-    if (!animate) {
-        [_handerView removeFromSuperview];
-        return;
-    }
-    
-    [UIView animateWithDuration:0.3f animations:^{
-        self.transform = CGAffineTransformMakeScale(0.1f, 0.1f);
-        self.alpha = 0.f;
-    } completion:^(BOOL finished) {
-        [_handerView removeFromSuperview];
-    }];
-    
+    [_handerView removeFromSuperview];
 }
 
 
@@ -341,7 +307,7 @@
     if (self.selectRowAtIndex) {
         self.selectRowAtIndex(indexPath.row);
     }
-    [self dismiss:YES];
+    [self dismiss];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

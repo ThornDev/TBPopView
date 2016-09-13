@@ -9,7 +9,9 @@
 #import "ViewController.h"
 #import "TBPopoverView.h"
 @interface ViewController ()
-
+{
+    TBPopoverView *pop;
+}
 @end
 
 @implementation ViewController
@@ -26,17 +28,20 @@
 - (IBAction)showPopAction:(UIButton*)sender {
     NSArray *titles = @[@"未评", @"初级", @"中级",@"高级"];
     NSArray *images = @[@"1", @"2", @"3",@"4"];
-    TBPopoverView *pop = [[TBPopoverView alloc] initWithTouchView:sender popWidth:200];
-    [pop setTitleArray:titles];
-    [pop setImageArray:images];
-    [pop setArrowPosition:ArrowPositionInRight];
-    [pop setFontSize:18.0f];
-    [pop setFontColor:[UIColor whiteColor]];
+    if (!pop) {
+        pop = [[TBPopoverView alloc] initWithTouchView:sender popWidth:200];
+        [pop setTitleArray:titles];
+        [pop setImageArray:images];
+        [pop setArrowPosition:ArrowPositionInRight];
+        [pop setFontSize:18.0f];
+        [pop setFontColor:[UIColor whiteColor]];
+        
+        pop.selectRowAtIndex = ^(NSInteger index){
+            [sender setTitle:titles[index] forState:UIControlStateNormal];
+        };
+    }
     
-    pop.selectRowAtIndex = ^(NSInteger index){
-        [sender setTitle:titles[index] forState:UIControlStateNormal];
-    };
-    [pop showWithAnimate:NO];
+    [pop show];
 }
 
 @end

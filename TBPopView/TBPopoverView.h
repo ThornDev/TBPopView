@@ -18,9 +18,8 @@ typedef NS_ENUM(NSUInteger,TBArrowPositionInHand){
 @interface TBPopoverView : UIView
 
 -(id)initWithTouchView:(id)view popWidth:(CGFloat)width;
--(void)showWithAnimate:(BOOL)animate;
+-(void)show;
 -(void)dismiss;
--(void)dismiss:(BOOL)animated;
 
 @property (nonatomic, copy) UIColor *borderColor;
 @property (nonatomic, copy) void (^selectRowAtIndex)(NSInteger index);
