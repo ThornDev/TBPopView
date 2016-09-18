@@ -161,7 +161,6 @@
         
         frame.size.width = MAX(width, frame.size.width);
     }
-    //    _popWidth = frame.size.width;
     frame.size.width = _popWidth;
     
     frame.origin.y = CGRectGetMaxY(self.viewFrame);
